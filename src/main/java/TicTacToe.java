@@ -1,6 +1,10 @@
 
 public class TicTacToe {
 
+	private static final char MARK = 'x';
+
+	private static final String BOARD = "         ";
+
 	public char[] board;
 
 	public char turn;
@@ -16,8 +20,8 @@ public class TicTacToe {
 
 	public TicTacToe()  
 	{
-		this.board="         ".toCharArray();
-		this.turn= 'x';
+		this.board=BOARD.toCharArray();
+		this.turn= MARK;
 	}
 
 	public static void main(String[] args) 
