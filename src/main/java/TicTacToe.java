@@ -1,5 +1,12 @@
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.util.LinkedList;
 import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 public class TicTacToe {
 
@@ -67,10 +74,7 @@ public class TicTacToe {
 		return array;
 	}
 
-	public static void main(String[] args) 
-	{
-	}
-
+	
 	public boolean win(char turn)
 	{
 		for(int i=0;i<dim;i++)
@@ -128,4 +132,28 @@ public class TicTacToe {
 
 	}
 
+	public static void main(String[] args) 
+	{
+		SwingUtilities.invokeLater(new Runnable () {
+	    public void run() {
+	     JFrame  Jframe=  new JFrame("java TTT");
+	     Jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	     Jframe.setLayout(new GridLayout(3,3));
+	     for(int i=0;i<9;i++)
+	     {
+	     JButton button= new JButton();
+	     button.setPreferredSize(new Dimension(100,100));
+	     button.setBackground(Color.BLACK);
+	     button.setOpaque(true);
+	     Jframe.add(button);		  
+	     }
+	     Jframe.pack();
+	     Jframe.setVisible(true);
+	     }
+	     });
+	}
+
+	
+	
+	
 }
