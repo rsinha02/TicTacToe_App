@@ -59,7 +59,7 @@ public class TicTacToe {
 		for(int i=0; i<board.length;i++) {
 			if(board[i]== CHAR) 
 			{
-			 list.add(i);
+				list.add(i);
 			}
 		}
 		Integer[] array= new Integer[list.size()];
@@ -85,11 +85,11 @@ public class TicTacToe {
 		return false;
 	}
 
-	
+
 	public boolean win_line(char turn, int start, int step) {
-	     	
-		  for(int i=0;i<dim;i++)
-		   {
+
+		for(int i=0;i<dim;i++)
+		{
 			if(board[start + step*i] != turn)
 			{
 				return false;
@@ -97,4 +97,21 @@ public class TicTacToe {
 		}
 		return true;
 	}
+	
+	public int minimax()
+	{
+		if(win('x')) { return 100; }
+		if(win('o')) { return -100; }
+		if(possibleMoves().length==0) { return 0 ; }
+		Integer mm=null;
+		for(Integer idx : possibleMoves()) {
+			Integer value= move(idx).minimax();
+			if(mm== null || turn=='x' && mm<value ||turn=='0' && value < mm ) {
+				mm=idx;
+			}
+		}
+		return mm;
+	}
+	
+	
 }

@@ -47,5 +47,15 @@ public class TicTacToeTest {
 	  
 	}
 	      
-	
+	@Test
+	public void testMinimax() throws Exception {
+		
+	 assertEquals(100, new TicTacToe("xxx         ").minimax());
+	 assertEquals(-100,  new TicTacToe("ooo         ").minimax());
+	 assertEquals(-100, new TicTacToe("ooo         ").minimax());
+	 assertEquals(-100, new TicTacToe("ooo         ").minimax());
+	 assertEquals(-100, new TicTacToe("ooo       'o'  ").minimax());
+			
+	 }
+	  
 }
