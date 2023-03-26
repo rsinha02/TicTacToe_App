@@ -1,5 +1,7 @@
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -32,5 +34,18 @@ public class TicTacToeTest {
 		TicTacToe position= new TicTacToe().move(0).move(1).move(2);
 		assertArrayEquals(new Integer[] {3,4,5,6,7,8}, position.possibleMoves());
 	}	 
-
+    
+	@Test
+    public void testWin() throws Exception   {
+	 
+      assertFalse(new TicTacToe().win('x'));
+	  assertTrue(new TicTacToe("ooo         ").win('o'));
+	  assertTrue(new TicTacToe("ooo         ").win('o'));
+	  assertTrue(new TicTacToe("ooo         ").win('o'));
+	  assertTrue(new TicTacToe("ooo         ").win('o'));
+	  assertTrue(new TicTacToe("ooo         ").win('o'));
+	  
+	}
+	      
+	
 }

@@ -40,6 +40,11 @@ public class TicTacToe {
 		this.turn = turn;
 	}
 
+	public TicTacToe(String string) {
+		this.board = string.toCharArray();
+		this.turn='o';
+	}
+
 	public TicTacToe move(int idx)
 	{
 		char[] newBoard = board.clone();
@@ -66,4 +71,30 @@ public class TicTacToe {
 	{
 	}
 
+	public boolean win(char turn)
+	{
+		for(int i=0;i<dim;i++)
+		{
+			if(win_line(turn,i*dim, 1) || win_line(turn,i,dim)) {
+				return true;
+			}
+		}
+		if(win_line(turn,dim-1,dim-1) || win_line(turn,0,dim+1)) {
+			return  true;
+		}
+		return false;
+	}
+
+	
+	public boolean win_line(char turn, int start, int step) {
+	     	
+		  for(int i=0;i<dim;i++)
+		   {
+			if(board[start + step*i] != turn)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
 }
