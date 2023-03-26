@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.List;
 
 public class TicTacToe {
 
@@ -43,7 +45,23 @@ public class TicTacToe {
 		return new TicTacToe(newBoard, turn == 'x' ? 'o' : 'x');
 	}
 
+
+	public Integer[] possibleMoves() 
+	{
+		List<Integer> list=new LinkedList<Integer>();
+		for(int i=0; i<board.length;i++) {
+			if(board[i]== ' ') {
+				list.add(i);
+			}
+		}
+		Integer[] array= new Integer[list.size()];
+		list.toArray(array);
+		return array;
+	}
+
+
 	public static void main(String[] args) 
 	{
 	}
+
 }
