@@ -58,4 +58,11 @@ public class TicTacToeTest {
 			
 	 }
 	  
+	  @Test
+	  public void testBestMove() throws Exception {
+		 assertEquals( 0, new TicTacToe(" xx        ").bestMove());
+		 assertEquals( 1 , new TicTacToe("o o        ",'o').bestMove());
+		  
+	  }
+	  
 }

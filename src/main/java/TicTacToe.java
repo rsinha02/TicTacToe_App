@@ -97,7 +97,7 @@ public class TicTacToe {
 		}
 		return true;
 	}
-	
+
 	public int minimax()
 	{
 		if(win('x')) { return 100; }
@@ -112,6 +112,20 @@ public class TicTacToe {
 		}
 		return mm;
 	}
-	
-	
+
+	public int bestMove()
+	{
+		Integer mm=null;
+		int best=-1;
+		for(Integer idx: possibleMoves()) {
+			Integer value=move(idx).minimax();
+			if(mm== null || turn=='x' && mm<value ||turn=='0' && value < mm ) {
+				mm=value;
+				best=idx;
+			}
+		}
+		return best;
+
+	}
+
 }
