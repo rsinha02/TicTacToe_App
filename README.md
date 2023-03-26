@@ -6,4 +6,4 @@ The condition to win this game are :
 
 Either of the player musts fill any column, row or a diagonal with the mark 'x' or 'o'.
 
-The player who finishes it firsts is winner of the  Max point.
+The player who finishes it first is winner of the  Max point.
