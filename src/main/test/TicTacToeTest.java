@@ -27,10 +27,10 @@ public class TicTacToeTest {
 		assertEquals(O,position.turn);
 	}
 
-	  @Test
-	  public void  testPossibleMoves() throws Exception {
-		 TicTacToe position= new TicTacToe().move(0).move(1).move(2);
-		 assertArrayEquals(new Integer[] {3,4,5,6,7,8}, position.possibleMoves());
-	  }	 
-	  
+	@Test
+	public void  testPossibleMoves() throws Exception {
+		TicTacToe position= new TicTacToe().move(0).move(1).move(2);
+		assertArrayEquals(new Integer[] {3,4,5,6,7,8}, position.possibleMoves());
+	}	 
+
 }

@@ -3,6 +3,8 @@ import java.util.List;
 
 public class TicTacToe {
 
+	private static final char CHAR = ' ';
+
 	private static final char MARK = 'x';
 
 	private static final String BOARD = "         ";
@@ -50,15 +52,15 @@ public class TicTacToe {
 	{
 		List<Integer> list=new LinkedList<Integer>();
 		for(int i=0; i<board.length;i++) {
-			if(board[i]== ' ') {
-				list.add(i);
+			if(board[i]== CHAR) 
+			{
+			 list.add(i);
 			}
 		}
 		Integer[] array= new Integer[list.size()];
 		list.toArray(array);
 		return array;
 	}
-
 
 	public static void main(String[] args) 
 	{
