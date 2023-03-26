@@ -4,6 +4,8 @@ import org.junit.Test;
 
 public class TicTacToeTest {
 
+	private static final String X = " x       ";
+	private static final char O = 'o';
 	private static final char MARK = 'x';
 	private static final String STRING = "         ";
 	TicTacToe position= new TicTacToe();
@@ -20,8 +22,8 @@ public class TicTacToeTest {
 	public void testMove() throws Exception 
 	{
 		TicTacToe position = new TicTacToe().move(1); 
-		assertEquals(" x       ", position.toString());
-		assertEquals('o',position.turn);
+		assertEquals(X, position.toString());
+		assertEquals(O,position.turn);
 	}
 
 
